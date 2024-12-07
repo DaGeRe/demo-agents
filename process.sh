@@ -19,7 +19,20 @@ function getJSON {
 	echo "{ \"nodes\" : ["
 	for node in $(getAllNodes | awk '{print $NF}' | sort | uniq)
 	do
-		echo "{ \"id\" : \"$node\" },"
+		echo "{ \"id\" : \"$node\","
+		if [[ "$node" == "org.apache.kafka.common".* ]]
+		then
+			echo "\"type\": 1"
+		elif [[ "$node" == "org.apache.kafka.server".* ]]
+		then
+			echo "\"type\": 2"
+		elif [[ "$node" == "org.apache.kafka".* ]]
+		then
+			echo "\"type\": 3"
+		else
+			echo "\"type\": 4"
+		fi
+		echo " },"
 	done
 	echo "{}"
 	echo "]"
@@ -31,6 +44,9 @@ function getJSON {
 	echo "}"
 }
 
-clean $1
+if [ "$#" -gt 1 ]
+then
+	clean $1
+fi
 echo "const calls = " &> calls.json
 getJSON >> calls.json
