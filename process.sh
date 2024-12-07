@@ -44,7 +44,7 @@ function getJSON {
 	echo "}"
 }
 
-if [ "$#" -gt 1 ]
+if [ "$#" -gt 0 ]
 then
 	clean $1
 fi
