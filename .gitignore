@@ -1,0 +1,6 @@
+bytebuddy-agent/.classpath
+bytebuddy-agent/.project
+bytebuddy-agent/.settings/
+bytebuddy-agent/dependency-reduced-pom.xml
+bytebuddy-agent/target/
+calls.json
