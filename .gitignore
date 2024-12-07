@@ -3,4 +3,10 @@ bytebuddy-agent/.project
 bytebuddy-agent/.settings/
 bytebuddy-agent/dependency-reduced-pom.xml
 bytebuddy-agent/target/
+javassist-agent/.classpath
+javassist-agent/.gitignore
+javassist-agent/.project
+javassist-agent/.settings/
+javassist-agent/dependency-reduced-pom.xml
+
 calls.json
