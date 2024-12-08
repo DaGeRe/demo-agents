@@ -8,5 +8,10 @@ javassist-agent/.gitignore
 javassist-agent/.project
 javassist-agent/.settings/
 javassist-agent/dependency-reduced-pom.xml
+aspectj-agent/.classpath
+aspectj-agent/.gitignore
+aspectj-agent/.project
+aspectj-agent/.settings/
+aspectj-agent/dependency-reduced-pom.xml
 
 calls.json
