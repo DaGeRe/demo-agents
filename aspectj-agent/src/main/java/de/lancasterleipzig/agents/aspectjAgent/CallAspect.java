@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -31,7 +32,8 @@ public class CallAspect {
 
 	@Before("monitoredOperation() && notWithinKieker()")
 	public void beforeOperation(final JoinPoint thisJoinPoint) throws Throwable {
-		String operationSignature = thisJoinPoint.getSignature().getDeclaringTypeName() + "." + thisJoinPoint.getSignature().getName();
+		Signature signature = thisJoinPoint.getSignature();
+		String operationSignature = signature.getDeclaringTypeName() + "." + signature.getName();
 
 		StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 		String caller = stackTrace[stackTrace.length - 2].getClassName() + "." + stackTrace[stackTrace.length - 2].getMethodName();

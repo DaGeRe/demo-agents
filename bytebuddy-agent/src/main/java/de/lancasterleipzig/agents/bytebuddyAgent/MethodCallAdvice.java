@@ -31,7 +31,7 @@ public class MethodCallAdvice {
 		}
 	}
 
-	private static void writeCall(String callRelationship) {
+	public static void writeCall(String callRelationship) {
 		try {
 			if (writer == null) {
 				writer = new BufferedWriter(new FileWriter(new File("calls.txt")));
@@ -43,7 +43,7 @@ public class MethodCallAdvice {
 		}
 	}
 
-	private static String getCalleeMethod(final String operationSignature) {
+	public static String getCalleeMethod(final String operationSignature) {
 		int parenthesisIndex = operationSignature.indexOf("(");
 		int spaceIndex = operationSignature.lastIndexOf(' ') + 1;
 		String callee;
