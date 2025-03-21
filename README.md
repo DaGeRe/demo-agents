@@ -13,7 +13,7 @@ To execute the demo, execute the following steps:
    - Set the `$EXTRA_ARGS` of Kafka to start using the `-javaagent`, for example `export EXTRA_ARGS="-javaagent:$DEMO_AGENT_FOLDER/javassist-agent/target/javassist-agent-0.0.1-SNAPSHOT.jar"` (in case of AspectJ, add the specification which `aop.xml` should be used: `-Dorg.aspectj.weaver.loadtime.configuration=file:$DEMO_AGENT_FOLDER/aspectj-agent/aop.xml`
    - Start the server: `bin/kafka-server-start.sh config/kraft/reconfig-server.properties` (in the Kafka folder)
    - Do whatever you like to do, and stop the server using Ctrl + C.
-4. Plot the results: ./process.sh and open visualization.html. This will yield something like the following:
+4. Plot the results: `./process.sh calls.txt` (or the relative path to the calls) and open `visualization.html` with a browser. This will yield something like the following:
 
 ![Calls in Kafka visualized using different colors for different packages](example.png "Graph of Calls")
 
